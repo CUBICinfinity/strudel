@@ -68,3 +68,28 @@ $: s("bass")
 # sometimes, rarely, almostNever, never (never might actually be useful for live coding)
 # `sometimesBy(n, x => x.stuff)`, n is a prob [0,1].
 
+# You can basically just replace n() with i() for .xen and it will work. The important thing to understand is that xen uses frequency space, not log (note value) space and i() makes that conversion.
+
+# In the future, predefine my own xenscales and also learn to scale perlin so that it jumps the right amount.
+
+# checkpoint
+setCps(140/60/4)
+
+$: s("sbd!4")._scope().duck("2").duckattack(0.2).duckdepth(0.8)
+
+
+$: i(perlin.range(-10, 10)
+     .rib(perlin.range(0,9)
+          .rib(perlin.range(0, 6)
+               .sometimesBy(0.9, x => x.rib(6,3)),2), 1)
+     .round().add(-1).seg(16)
+    ).xen("5edo")
+  .distort("2.2:.3")
+  .s("saw").lpf(200).lpenv(2).lpq(12)
+.orbit(2)._pianoroll()
+
+
+
+
+
+
