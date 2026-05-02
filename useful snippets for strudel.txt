@@ -1,0 +1,70 @@
+# use to fadeout:
+.lpf(slider(4000, 1, 4000))
+
+# good as a tutorial: https://www.youtube.com/watch?v=HkgV_-nJOuE
+
+# samples
+samples('github:switchangel/breaks')
+samples('github:switchangel/pad')
+samples('github:tidalcycles/uzu-drumkit')
+
+# Scale the lpf slider this way!
+lpf(slider(0,0,100).pow(2))
+
+# bring this in to loop the whole everything. comment out to stop (change those numbers as needed) . change the size (1/16) (incrementally?): 4, 8, 16
+all(x => x.lpf(slider(0,0,100).pow(2)).rib(6, 1/16))
+
+
+# use with breakbeats
+.almostNever(ply("2|4"))
+
+# bass is a custom sound chop
+$: s("bass")
+	.scrub(perlin.seg(8))
+
+$: s("bass")
+	.scrub(perlin.range(.17,.3)
+	.fast.seg(8).rib(22, 2))
+	.sometimesBy(.15, x => x.speed("-1")) # 15%
+
+
+# combine decay and bitcrush. try it with breakbeat?
+.decay(.3).coarse(8)
+
+# an alternative way to amplify is through distortion. eg.,
+.distort("3:.5")
+
+# infinite riser. room and gain are extras, very flexible. don't be afraid to quickly start and stop to get the effect again.
+:$ s("pulse!8").fm(time).fmh(time).room(1).gain(.6)
+
+# use .clip() with longer samples like "pad" to prevent overstacking.
+# .clip(1) is one cycle long.
+
+# .postgain() is nice because it's last in the stack. changes volume after everything else, so easier to control than .gain()
+
+# S$: is like _$: but instead of mute, it solos the track. It's a little weird when you realize this is just function naming. You can combine S and _ with any track name, and might be surprised that a track starting with a capital S gets soloed (e.g., Silence:).
+
+# .transpose() lets you shift by semitones instead of by scale notes. trans() is alias
+
+# you don't have to use .duckdepth(). .duckattack(), etc. are also available and attack changes how quickly the sound comes back in.
+
+# bear in mind, though we don't have to get too creative just yet, there's not limit to how sidechaining (orbit) can be used.
+
+# room and delay tend to work well together. usually, you don't want to go above room(1).
+
+# sbd is NOT a sample. it's a synthesized base drum (sound font / stynth).
+
+# An important concept that can explain some problems I face: https://youtu.be/m7Rp46AU8dw?si=lhYpKVn4SYyyc0mD&t=1242
+# .set.mix(stuff here)
+# setDefaultJoin('mix') is a thing, but stay away from this for now. It affects interpretation of more than just set(), but it can certainly be useful once I have the core of strudel down.
+
+# you can log to console with .log() (this makes it more liks sonic pi)
+
+# lpe is short for lp envelope
+# lpe(n) uses 2^n (maybe not super important)
+
+# resonance lpq(8) is a fine place to start
+
+# sometimes, rarely, almostNever, never (never might actually be useful for live coding)
+# `sometimesBy(n, x => x.stuff)`, n is a prob [0,1].
+
