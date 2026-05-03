@@ -72,7 +72,10 @@ $: s("bass")
 
 # In the future, predefine my own xenscales and also learn to scale perlin so that it jumps the right amount.
 
-# checkpoint
+# can toggle lpf to alternate when certain tracks should be heard more of less.
+
+
+# checkpoints
 setCps(140/60/4)
 
 _$: s("sbd!4")._scope().duck("2").duckattack(0.2).duckdepth(0.8)
@@ -115,6 +118,16 @@ $: i(perlin.range(-12, 12)
 
 
 
+
+$: i(rand.range("-30", 30).rib(6,1)
+     .add(perlin.range(-50, 50).rib("<7!3 8>", 2.03)).add(10).mul("<0.30>").round().seg(20)
+    ).xen("7edo").slow("1 2 2, 2")
+  .distort("2.2:.3")
+  .s("supersaw")
+  .lpf(slider(14.959,1,100).pow(2)).lpenv(slider(3.02,0,4)).lpq(slider(6.64,0,20))
+  .room(0.9).delay(0.2)
+  .postgain(slider(1, 0, 1))
+.pianoroll()
 
 
 
