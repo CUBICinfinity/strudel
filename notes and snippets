@@ -182,3 +182,33 @@ $: s("pulse").orbit(4).seg(16).dec(.1).fm(time).fmh(time)
 	Math.pow(2, 9/13),
 	Math.pow(2, 11/13),
 	Math.pow(2, 12/13), ]
+
+
+# Simplified "improvements" (personalization)
+samples('github:switchangel/breaks')
+samples('github:switchangel/pad')
+samples('github:tidalcycles/uzu-drumkit')
+
+setCps(130/60/4)
+
+// Bring in first without distortion. when introduce large pianoroll, remove scope.
+$: s("sbd!4")
+  .distort("3:.35")
+  .duck("2:3:4").duckattack(.2).duckdepth(.8)
+  //._scope()
+
+// Introduce second. Add rib complexity. Add key changes later.
+$: n(irand(10).sub(7).seg(8).round())
+  .rib("<2 0 2 1>", 1).scale("<c#:minor g#:minor>/8")
+.distort("2.2:.3")
+.s("sawtooth").lpf(slider(34.7,0,100).pow(2)).lpenv(slider(7.112, 0, 8)).lpq(12)
+.orbit(2).pianoroll({cycles:3, playhead:0})
+
+// Bring in only before pulse riser and sbd distortion. Silence after.
+_$: s("supersaw").detune(1).rel(5).beat(2, 32).slow(2)
+  .fm(2).fmh(2.04).room(1).roomsize(6)
+.orbit(3)
+
+// Don't silence after creation. Only much later.
+_$: s("pulse").orbit(4).seg(16).dec(.1).fm(time).fmh(time)
+
