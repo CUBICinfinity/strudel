@@ -170,3 +170,15 @@ $: s("supersaw").detune(1).rel(5).beat(2, 32).slow(2)
 .orbit(3)
 
 $: s("pulse").orbit(4).seg(16).dec(.1).fm(time).fmh(time)
+
+
+
+# usable 13edo scale:
+[ Math.pow(2, 0/13),
+	Math.pow(2, 2/13),
+	Math.pow(2, 4/13),
+	Math.pow(2, 5/13),
+	Math.pow(2, 6/13),
+	Math.pow(2, 9/13),
+	Math.pow(2, 11/13),
+	Math.pow(2, 12/13), ]
