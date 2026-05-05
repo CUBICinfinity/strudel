@@ -33,3 +33,40 @@ $: s("swpad:1").fit().splice(5, "1 [3!2] [1!2] [2 4/2]")
 .note("c2, eb2")
 
 all(x => x.postgain(0.1))
+
+
+
+###
+# potential ending:
+samples('github:switchangel/pad')
+
+setCps(130/60/4)
+
+// Bring in first without distortion. when introduce large pianoroll, remove scope.
+_$: s("sbd!4")
+  .distort("3:.3").coarse(64)
+  .duck("2:3:4").duckattack(.2).duckdepth(.8)
+  //._scope()
+
+// Introduce second. Add rib complexity. Add key changes later. // Add coarse 16 and boost lpq
+_$: n(irand(10).sub(7).seg(16).round())
+  .rib("<42 33>/6", 1).scale("<c#:minor f:locrian>/6")
+.distort("2.2:.3")
+.s("sawtooth").lpf(slider(9.8,0,100).pow(2)).lpenv(slider(1.696, 0, 8)).lpq(32).coarse(16)
+.orbit(2).color("#aa00ff").pianoroll({cycles:3, playhead:0.2})
+  .postgain(0.9)
+
+// Bring in only before pulse riser and sbd distortion. Silence after.
+$: s("supersaw").detune(1).rel(5).beat(2, 32).slow(2)
+  .fm(2).fmh(2.04).room(1).roomsize(6)
+.orbit(3)
+
+// Don't silence after creation. Only much later.
+_$: s("pulse").orbit(4).seg(16).dec(.1).fm(time).fmh(time)
+
+
+_$: s("swpad:1").fit().splice(5, "1 [3!2] [1!2] [2 4/2]")
+  .dec(slider(0.088,0,1)).coarse("8")
+.note("c2, eb2")
+
+all(x => x.postgain(slider(0.061,1)))
