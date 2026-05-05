@@ -118,10 +118,12 @@ setCps(135/240)
 
 //thoughts: (if there's enough time) start with the pad and add the beat with a scope. add the splices and bitcrush (or add bitcrush near the end, just to play with).
 // iteratively build out sawtooth (maybe start seg(8) and switch to 16 once the additional melody has been added)
+// experiment with not using pad beyond this point. we'll learn from practice what works and what doesn't.
 // add lpf,lpenv, lpq and play with them.
 // add square riser, commenting out beat.
 // remove bitchushes and bring back beat.
 // implement pianoroll
+// add longer pad back for end.
 // disregard all of the above and improvise!?
 
 
