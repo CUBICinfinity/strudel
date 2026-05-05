@@ -92,7 +92,7 @@ $: n(irand(10).sub(7).seg(16))
   .distort("2.2:.3")//.coarse(16)
   .lpf(slider(36.96,0,80).pow(2)).lpenv(slider(4.24, 0, 8)).lpq(12)//32
   .color("#a0f").pianoroll({cycles:3, playhead:0.2})
-  .orbit(2).postgain(slider(0.136,0,1))
+  .orbit(2).postgain(slider(0.136,0,0.5))
   .fm(2).fmh(2.04).room(1).roomsize(6)
 
 
