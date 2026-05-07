@@ -126,6 +126,17 @@ setCps(135/240)
 // add longer pad back for end.
 // disregard all of the above and improvise!?
 
+// new plan:
+// start with slow pad. add sbd at !2 and splice.
+// add .note("c2, eb2") to pad
+// implement saw. don't do the coarse stuff.
+// incrementally build up the same way switch angel does
+// improve on the melody.
+// add coarse for fun.
+// remove coarse and add fm fmh and room
+// slowly drop stuff off and finish with same pad.
+
+
 
 
 
