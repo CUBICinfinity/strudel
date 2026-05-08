@@ -141,7 +141,7 @@ setCps(135/240)
 // add saw suff incrementally according to practice. don't pitch down until have scale ready.
 // square riser takes too much time too. just skip it.
 // drop out the base while I play with the saw synth some more, then bring it back and add distortions.
-// do not add room until have added fm.
+// do not add room until have added fm. -- these sound best at seg(16) rather than seg(8)
 // idea to try: boost room like crazy before hitting ctrl+.
 // you're going to want to do a lot, but less is more. definitely switch to seg(8) at one point though
 // not customizing pianoroll also saves time. defaults are fine. color only.
