@@ -144,6 +144,9 @@ setCps(135/240)
 // do not add room until have added fm.
 // idea to try: boost room like crazy before hitting ctrl+.
 // you're going to want to do a lot, but less is more. definitely switch to seg(8) at one point though
+// not customizing pianoroll also saves time. defaults are fine. color only.
+// best way to stop is a fade out then ctrl+.
+// 33 is good, but switch to 66 later.
 
 
 
