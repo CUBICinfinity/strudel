@@ -143,7 +143,7 @@ setCps(135/240)
 // drop out the base while I play with the saw synth some more, then bring it back and add distortions.
 // do not add room until have added fm.
 // idea to try: boost room like crazy before hitting ctrl+.
-// you're going to want to do a lot, but less is more.
+// you're going to want to do a lot, but less is more. definitely switch to seg(8) at one point though
 
 
 
