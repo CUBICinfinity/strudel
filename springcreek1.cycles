@@ -172,6 +172,8 @@ $: n(irand(10).seg(8).sub(7))
 
 //9 improvise - with practice, we just abandon the above anyway, lol.
 
+// it's best to have low lpf and all when activatine room.
+
 // even simpler template:
 setCps(135/240)
 
