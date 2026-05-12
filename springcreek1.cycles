@@ -157,7 +157,7 @@ setCps(135/240)
 //4 .s("saw").lpf(600).lpenv(4).lpq(12)
 
 //5
-$: n(irand(10).seg(8).sub(7))
+$: n(irand(10).seg(8).sub(7)) //!!! remember the sub
   .rib("22", 1).scale("c#:minor") --> rib 42 --> sbd!4 --> seg(12) --> seg(16)
 .s("saw").lpf(600).lpenv(4).lpq(12)
 
@@ -173,6 +173,8 @@ $: n(irand(10).seg(8).sub(7))
 //9 improvise - with practice, we just abandon the above anyway, lol.
 
 // it's best to have low lpf and all when activatine room.
+//not ducking saves time to do other things. for example, color("0af") and coarse(16) lpq(32)!!
+//I was tempted to forego the beat, but it's very necessary.
 
 // even simpler template:
 setCps(135/240)
