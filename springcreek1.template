@@ -3,7 +3,7 @@ setCps(400/3/240)
 $: s("sbd!2")
 
 
-_$: n(irand(10).add(14).seg(8))
+_$: n(irand(10).add(14).seg(8)).gain(1.5)
 
 
   
