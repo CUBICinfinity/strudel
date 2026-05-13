@@ -6,5 +6,9 @@ $: s("sbd!2")
 _$: n(irand(10).add(14).seg(8)).gain(1.5)
 
 
+
   
 all(x => x.postgain(slider(0.394,0,1)))
+
+
+# remember to be very incremental
