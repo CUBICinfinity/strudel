@@ -177,6 +177,9 @@ $: n(irand(10).seg(8).sub(7)) //!!! remember the sub
 // even if you don't do that, I'm realizing with how little time there is, ducking isn't satisfactory.
 //I was tempted to forego the beat, but it's very necessary.
 
+// I'm having second thought's about my "no ducking" decision. I've practiced and will keep practicing.
+// I think it very much will be improvised, which will take the nerves off since I can get in the flow and not worry about memorization.
+
 // even simpler template:
 setCps(135/240)
 
